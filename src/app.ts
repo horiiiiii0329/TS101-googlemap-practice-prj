@@ -6,17 +6,17 @@ const YOUR_API_KEY = "AIzaSyBxRWvc1F1zZYGHrc1yJ0Fw9jebBEbfe50";
 
 declare var google: any;
 
-type GoogleGeocodingResponse = {
-  results: { geometry: { location: { lat: number; lng: number } } };
-  status: "OK" | "ZERP_RESULTS";
-};
+// type GoogleGeocodingResponse = {
+//   results: { geometry: { location: { lat: number; lng: number } } };
+//   status: "OK" | "ZERP_RESULTS";
+// };
 
 function searchAddressHandler(event: Event) {
   event.preventDefault();
   const enteredAddresss = addressinput.ariaValueMax;
 
   axios
-    .get<GoogleGeocodingResponse>(
+    .get<any>(
       `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
         enteredAddresss
       )}&key=${YOUR_API_KEY}`
